@@ -1,0 +1,28 @@
+{% extends "base_template.html" %}
+{% block title %}Restaurante Sancho Panza{% endblock %}
+{% block content %}
+ <h1>Recetas con mas me gusta </h1>
+      <hr/>
+      <div class="container">
+      <table>
+         <thead>
+            <tr>
+               <th>Receta id</th>
+               <th>Nombre</th>
+               <th>Usuario id</th>
+            </tr>
+         </thead>
+
+         <tbody>
+            {% for receta in ordenada %}
+               <tr>
+                  <td>{{ receta.nombre }}</td>
+				  <td>{{ receta.usuario.nombre }}</td>
+                   <td>{{ receta.cantidadmegusta }}</td>
+               </tr>
+            {% endfor %}
+         </tbody>
+      </table>
+      <br><br>
+      </div>
+{% endblock %}

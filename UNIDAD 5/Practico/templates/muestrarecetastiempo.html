@@ -1,0 +1,20 @@
+{% extends "base_template.html" %}
+{% block title %}Restaurante Sancho Panza{% endblock %}
+{% block content %}
+    <form action = "{{ url_for('listadorecetas') }}" method = "post" class= "container">
+          <div>
+              Seleccione receta.
+              <select>
+                  {% for receta in lista %}
+                  <option>
+                          <td> {{ receta.nombre }} </td>
+                  </option>
+                  {% endfor %}
+              </select>
+          </div>
+          <div>
+              <button
+              type="submit">Guardar</button
+          </div>
+      </form>
+{%endblock%}
